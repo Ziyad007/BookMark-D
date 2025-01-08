@@ -15,7 +15,7 @@ const db = new pg.Client({
   database: process.env.DATABASE,
   password: process.env.PASSWORD,
   port: process.env.DBPORT,
-}); 
+});  
 
 db.connect()
   .then(() => console.log("Connected to the database successfully"))
