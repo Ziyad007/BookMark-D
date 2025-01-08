@@ -10,9 +10,13 @@ const port = process.env.PORT;
 
 // DB Connection
 const db = new pg.Client({
-  connectionString: process.env.DATABASE_URL
+  user: process.env.USER,
+  host: process.env.HOST,
+  database: process.env.DATABASE,
+  password: process.env.PASSWORD,
+  port: process.env.DBPORT,
 });   
- 
+
 db.connect()
   .then(() => console.log("Connected to the database successfully"))
   .catch(err => {
