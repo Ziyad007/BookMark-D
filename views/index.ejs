@@ -1,0 +1,76 @@
+<%- include("partials/header.ejs") %>
+<h1>Add A New Book</h1>
+<div class="box">
+    <div class="add-new-book-section">
+        <div class="book-form">
+            <form class="edit-form" action="/add" method="post">
+                <label for="newIsbn">Enter ISBN:</label>
+                <input class="input-field" type="text" name="newIsbn" placeholder="ISBN" required>
+                
+                <label for="newTitle">Enter Title:</label>
+                <input class="input-field" type="text" name="newTitle" placeholder="Title" required>
+                
+                <label for="newAuthor">Enter Author:</label>
+                <input class="input-field" type="text" name="newAuthor" placeholder="Author" required>
+                
+                <label for="newReview">Enter Review:</label>
+                <textarea class="input-field" name="newReview" placeholder="Review" required></textarea>
+                
+                <label for="newCategory">Select Category:</label>
+                <select class="input-field" name="newCategory" required>
+                    <option value="" disabled selected>Select Category</option>
+                    <option value="Fiction">Fiction</option>
+                    <option value="Non-Fiction">Non-Fiction</option>
+                    <option value="Mystery">Autobiography</option>
+                    <option value="Fantasy">Self-help</option>
+                    <option value="Science">Science</option>
+                </select>
+                
+                <label for="dateRead">Select Date Read:</label>
+                <input class="input-field" type="date" name="dateRead" required>
+                
+                <label for="newRating">Enter Rating (1-10):</label>
+                <input class="input-field" type="number" name="newRating" placeholder="Rating (1-10)" min="1" max="10" required>
+                <button class="submit-btn" type="submit" name="list">Submit</button>
+             </form>   
+        </div>
+    </div>
+</div>
+
+<h1>List of Books</h1>
+<div class="main-container" id="books-list">
+    <% books.forEach((book,index) => { %>
+        <div class="book">
+            <div class="book-details">
+                <div class="book-image">
+                    <img src="<%= bookCovers[index] %>" alt="Cover of Book <%= book.title %>" class="cover">
+                </div>
+                <div class="book-info">
+                    <h2 class="book-title"><%= book.title %></h2>
+                    <div class="book-meta">
+                        <p class="author"><%= book.author %></p>
+                        <span> | </span>
+                        <p class="category"><%= book.category %></p>
+                    </div>
+                    <p class="book-review"><%= book.review %></p>
+                    <div class="rating">
+                        <p>Rating:<span class="rating-number"><%= book.rating %>/10</span></p>
+                    </div>                    
+                    <p class="date-read">Date Read: <%= new Date(book.date_read).toLocaleDateString('en-GB') %></p>
+                </div>
+                <div class="update-container">
+                    
+                    <a href="/edit/<%= book.id %>">
+                        <img src="edit-246.png" class="edit-icon" width="40" height="40" alt="Edit">
+                    </a>
+                    <form action="/delete/<%= book.id %>" method="POST" onsubmit="return confirm('Are you sure you want to delete this book?')">
+                        <button type="submit" class="delete-btn">
+                            <img src="delete.png" class="delete-icon" width="30" height="30" alt="Delete">
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <% }); %>
+</div>
+<%- include("partials/footer.ejs") %>

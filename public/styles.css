@@ -1,0 +1,284 @@
+body {
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+  }
+
+/* Header */  
+
+  .logo img{
+    width:150px;
+    height:40px;
+    border-radius: 7px; /* Rounded edges */
+    box-shadow: 0 7px 8px rgba(0, 0, 0, 0.1); /* Shadow */
+  }
+  nav{
+    padding:10px;
+    display: flex;
+    align-items: center;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px; 
+  }
+  .styled-select {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: transparent; /* Background color */
+    color: black; /* Text color */
+    font-size: 20px; /* Font size */
+    border: none; /* Remove border */
+  }
+  .styled-select:hover,
+  .styled-select:focus {
+      outline: none; /* Remove focus outline */
+      color:#155263; /* Darker text color on hover */
+  }
+  .search-container {
+    margin-left: auto;    /* Push search container to the right */
+  }
+  nav input[type="text"] {
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 18px;
+    border: none;
+  }
+
+  .search-container button {
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 4px;
+    font-size: 18px;
+    padding:5px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    background-color:#155263;
+    transition: background-color 0.3s;
+  }
+  nav ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: black; /* Black font to match the white background */
+  }
+  nav ul li a:hover {
+    color:#155263;
+  }
+  hr{
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 8px 12px -12px rgba(0, 0, 0, 0.5);
+  }
+
+
+/* Add Book Form */
+.box {
+  padding: 3rem;
+  margin: 2% 20%;
+  background-color: #f9f9f9; /* Light background for the box */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+  .book-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  .input-field {
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+    
+  }
+  .input-field:focus {
+    border-color:#155263; /* Highlight border color on focus */
+    outline: none; /* Remove outline */
+  }
+  textarea.input-field {
+    resize: vertical; /* Allow vertical resizing of the textarea */
+  }
+  .submit-btn {
+    background-color: #155263;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform 0.2s;
+    margin-top: 1rem;
+  }
+  .submit-btn:hover {
+    transform: scale(1.1);
+  }
+
+
+
+/* Main Content */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+  h1 {
+    text-align: center;
+    color:#155263;
+    margin-bottom: 40px;
+  }
+  .book {
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  .book-title:hover{
+    color: #155263;
+  }
+  .book-meta {
+    display: flex;
+    align-items: center;
+    gap: 5px; 
+  }
+  .book-meta p {
+    margin: 0;
+    font-size: 16px; /* You can adjust the font size as needed */
+    color: #555; /* Optional: Set color */
+  }
+  .book-meta span {
+    font-size: 16px;
+    color: #777; /* Optional: Set color for the separator */
+  }
+  .book-meta .author {
+    font-style: italic;
+  }
+  .book-details {
+    display: flex;
+    align-items: flex-start;
+  }
+  .book-review{
+    max-width: 80%;
+  }
+  .book-image {
+    margin-right: 50px;
+  }
+  .book-image img {
+    width: 200px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .book-info {
+    flex-grow: 1;
+  }
+  .rating-number {
+      background-color:#155263; /* Color for the rating badge */
+      color: white;
+      padding: 1px 5px;
+      border-radius: 5px; /* Rounded corners for the rating badge */
+      font-size: 15px;
+      margin-left: 5px;
+  }
+  .date-read{
+    font-size: 14px;
+    color: #777;
+  }
+  .update-container {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .update-container a, 
+  .update-container form {
+    display: inline-block;
+  }
+  .update-container button {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  .edit-icon, .delete-icon {
+    transition: transform 0.2s;
+  }
+  .edit-icon:hover, .delete-icon:hover {
+    transform: scale(1.1);
+  }
+
+
+/* Edit Page */
+
+
+
+
+/* Footer */
+footer {
+    background-color: #f0f0f0;
+    padding: 10px 150px;
+    text-align: center;
+    }
+    .footer-container {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin:40px 40px;
+    }
+    .footer-logo img {
+    width: 350px;
+    border-radius: 3px; /* Rounded edges */
+    }
+    .footer-about h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: bold;
+  }
+  
+  .footer-about p {
+      padding-left: 5rem;
+      font-size: 14px;
+      line-height: 1.6;
+      text-align: justify; /* Ensures uniform text alignment */
+      max-width: 500px; /* To control the width of the paragraph */
+      margin: 0; /* Removes default paragraph margins */
+  }
+  
+  .footer-copyright ul {
+    list-style: none;
+    display: flex;
+    gap: 10px; /* Space between social media icons */
+    justify-content: center;
+    margin: 0;
+  }
+
+  .footer-copyright li {
+      display: inline-block;
+  }
+
+  .footer-copyright li a img {
+      width: 25px; /* Adjust size of social media icons */
+      transition: transform 0.2s ease;
+  }
+
+  .footer-copyright li a img:hover {
+      transform: scale(1.1); /* Slight zoom effect on hover */
+  }
+  .footer-copyright p {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin: 10px 0; /* Space between each paragraph */
+  }
+
+  
+  

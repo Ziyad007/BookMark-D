@@ -1,0 +1,49 @@
+<%- include("partials/header.ejs") %>
+<h1>Edit Book</h1>
+<div class="box">
+    <div class="edit-book-section">
+        <div class="book-form">
+            <form class="edit-form" action="/update/<%= book.id %>" method="post">
+                
+                <!-- ISBN Input -->
+                <label for="newIsbn">Enter ISBN:</label>
+                <input class="input-field" type="text" name="newIsbn" value="<%= book.isbn %>" placeholder="ISBN" required>
+
+                <!-- Title Input -->
+                <label for="newTitle">Enter Title:</label>
+                <input class="input-field" type="text" name="newTitle" value="<%= book.title %>" placeholder="Title" required>
+
+                <!-- Author Input -->
+                <label for="newAuthor">Enter Author:</label>
+                <input class="input-field" type="text" name="newAuthor" value="<%= book.author %>" placeholder="Author" required>
+ 
+                <!-- Review Input -->
+                <label for="newReview">Enter Review:</label>
+                <textarea class="input-field" name="newReview" placeholder="Review" required><%= book.review %></textarea>
+
+                <!-- Category Dropdown -->
+                <label for="newCategory">Select Category:</label>
+                <select class="input-field" name="newCategory" required>
+                    <option value="Fiction" <% if (book.category === "Fiction") { %>selected<% } %>>Fiction</option>
+                    <option value="Non-Fiction" <% if (book.category === "Non-Fiction") { %>selected<% } %>>Non-Fiction</option>
+                    <option value="Autobiography" <% if (book.category === "Autobiography") { %>selected<% } %>>Autobiography</option>
+                    <option value="Self-help" <% if (book.category === "Self-help") { %>selected<% } %>>Self-help</option>
+                    <option value="Science" <% if (book.category === "Science") { %>selected<% } %>>Science</option>
+                </select>
+
+                <!-- Date Read Input -->
+                <label for="dateRead">Select Date Read:</label>
+                <input class="input-field" type="date" name="dateRead" value="<%= book.date_read %>" required>
+
+                <!-- Rating Input -->
+                <label for="newRating">Enter Rating (1-10):</label>
+                <input class="input-field" type="number" name="newRating" value="<%= book.rating %>" placeholder="Rating (1-10)" min="1" max="10" required>
+
+                <!-- Submit Button -->
+                <button class="submit-btn" type="submit" name="list">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMark'd</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/x-icon" href="/bookmark.svg">
+</head>
+<body>  
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="/"><img src="/Logo.png" alt="BookMark'D Logo" ></a>
+            </div>
+        </div>
+            <ul>
+                <li><a href="/#books-list">Books</a></li>
+                <li><span style="font-size: 20px;color: #777;">Sort by:</span></li>
+                <li><a href="/sort?type=rating">Rating</a></li>
+                <li><a href="/sort?type=alphabetical">Title(A/Z)</a></li>
+                <li>
+                    <select onchange="if (this.value) window.location.href=this.value" class="styled-select">
+                        <option value="">Genre</option>
+                        <option value="/sort?type=categories&category=Fiction">Fiction</option>
+                        <option value="/sort?type=categories&category=Non-Fiction">Non-Fiction</option>
+                        <option value="/sort?type=categories&category=Autobiography">Autobiography</option>
+                        <option value="/sort?type=categories&category=Self-help">Self-help</option>
+                        <option value="/sort?type=categories&category=Science">Science</option>
+                    </select>
+                </li>
+                
+            </ul>
+            <div class="search-container">
+                <form action="/search" method="GET">
+                    <input type="text" name="query" placeholder="Search books..." required>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+    </nav>
+    <hr>
