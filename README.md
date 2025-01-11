@@ -35,7 +35,7 @@ CREATE TABLE books (
 ### Run the App
 Run the following command:
 ```
-npm start
+node index.js
 ```
 The app will start, and you should see a message like this in your terminal:
 ```
